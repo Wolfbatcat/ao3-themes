@@ -1,8 +1,8 @@
 /*============================================================
 
-                     ✿✿✿ Rose Pine ✿✿✿                 
+            ✦✦✦ Rose Pine — Closer to Home ✦✦✦             
            A Site Skin for the Archive of Our Own          
-                      By Blackbatcat   
+                      By ravenothere   
 
 ==============================================================
 LINKS & CREDITS
@@ -10,11 +10,12 @@ LINKS & CREDITS
 
 CODE & INSTRUCTIONS:
 
-- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
-- Instructions (AO3):  https://archiveofourown.org/works/69993411
+- Code & Instructions (GitHub):       https://github.com/ravenothere
+- Instructions (AO3):  https://archiveofourown.org/works/80768621
 
 CREDITS:
 
+- Original Skin:       "Rose Pine" by Blackbatcat          https://github.com/Wolfbatcat/ao3-rose-pine
 - Base:                "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
 - Inspired by:         "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
                        "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
@@ -22,9 +23,9 @@ CREDITS:
 
 FIND ME ON:
 
-- GitHub:              https://github.com/Wolfbatcat
-- AO3:                 https://archiveofourown.org/users/Wolfbatcat/pseuds/Wolfbatcat
-- Tumblr:              https://blackbatcats.tumblr.com/
+- GitHub:              https://github.com/ravenothere
+- AO3:                 https://archiveofourown.org/users/DoveEater/pseuds/ravenothere
+- Tumblr:              https://www.tumblr.com/ravenothere
 
 ==============================================================
 DIRECTORY
@@ -217,22 +218,17 @@ col.name {
 #tos_prompt .heading {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
     column-gap: 1.25em;
+    padding-block: 0.5em;
     position: unset;
     z-index: 100;
     box-sizing: border-box;
-    width: 96%;
-    max-width: 96%;
-    margin-top: 2%;
-    margin-right: 2%;
-    margin-bottom: 0;
-    margin-left: 2%;
-    border-width: var(--border-width);
-    border-style: solid;
-    border-color: var(--border1);
-    border-radius: var(--radius-mid);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-bottom: var(--border-width) solid var(--border1);
     box-shadow: var(--shadow-header);
     background: var(--bg2);
 }
@@ -281,9 +277,18 @@ col.name {
     color: transparent;
 }
 
-/* hide default "Archive of Our Own beta" text and logo */
-#header .heading a * {
-    display: none;
+/* hide default "Archive of Our Own beta" text and recolor logo */
+#header .logo {
+  filter: var(--header-icon-hgl);
+}
+
+#header .logo:is(:hover, :focus) {
+  filter: var(--header-icon);
+}
+
+#header h1.heading a span,
+#header h1.heading a sup {
+  display: none;
 }
 
 /*>========== HEADER DROPDOWN MENUS ==========<*/
@@ -345,6 +350,7 @@ col.name {
     background-color: transparent;
     color: var(--txt-main);
     transition: 25ms ease-out;
+
 }
 
 #header .navigation .dropdown .menu li a:is(:hover, :focus) {
@@ -511,17 +517,20 @@ col.name {
 
 /*>========== COLLECTIONS CONTEXT ==========<*/
 
+#header:has(h2) {
+    padding-bottom: 0;
+}
+
 #header h2 {
     order: 4;
     display: block;
     width: 100%;
     min-height: unset;
     max-height: 30vh;
-    padding: 0.25em var(--margins-header);
+    margin-top: 0.25em;
+    padding: 0.5em var(--margins-header);
     border-inline: none;
     border-top: var(--border-width) solid var(--border2);
-    border-bottom-left-radius: var(--radius-big);
-    border-bottom-right-radius: var(--radius-big);
     background-color: var(--link-hgl) !important;
     background-size: auto 100% !important;
     font-size: 1.15em;
@@ -532,46 +541,38 @@ col.name {
 /*============================================================
 >> 04 REGION: DASHBOARD
 ============================================================*/
+
 /* sticky sidebar navigation */
 #dashboard,
 #dashboard.own {
     position: sticky;
-    top: 1em;
+    top: 0;
     box-sizing: border-box;
     width: 18%;
     min-width: 150px;
     /* prevent sidebar from getting too narrow */
     max-width: 230px;
     /* prevent sidebar from getting too wide */
-    max-height: 96vh;
+    max-height: 100vh;
     overflow-x: visible;
     overflow-y: auto;
-    margin-top: 1.85em;
-    margin-left: 2%;
-    padding-top: 0.429rem;
-    padding-right: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.5rem;
-    border-width: var(--border-width);
-    border-style: solid;
+    padding: 0.429rem 0.5rem 0 0.5rem;
+    border: none;
+    border-right: var(--border-width) solid;
     border-color: var(--border1) !important;
     /* required for tablet + mobile skin */
-    border-radius: var(--radius-mid);
-    background-color: var(--bg5);
+    border-radius: 0;
+    background-color: var(--bg3);
     font-size: 0.875em;
     scrollbar-color: transparent transparent;
-    box-shadow: var(--shadow-header);
 }
 
 #dashboard ul {
     display: block;
     float: none;
     position: relative;
-    padding-top: 0.429em;
-    padding-bottom: 0.429em;
-    border-top-width: var(--border-width);
-    border-top-style: solid;
-    border-top-color: var(--border1);
+    padding: 0.429em 0;
+    border-top: var(--border-width) solid var(--border1);
     text-align: left;
 }
 
@@ -585,10 +586,7 @@ col.name {
     box-sizing: border-box;
     max-width: 100%;
     margin-block: 1px;
-    padding-top: 0.429em;
-    padding-right: 0.5rem;
-    padding-bottom: 0.429em;
-    padding-left: 0.5rem;
+    padding: 0.429em 0.5rem;
     border-radius: var(--radius-small);
     color: var(--txt-main);
     line-height: 1.286;
@@ -602,9 +600,7 @@ col.name {
 #dashboard .current {
     background-color: var(--int-current-bg);
     color: var(--int-current-txt);
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--int-current-border);
+    border: 1px solid var(--int-current-border);
     box-shadow: var(--shadow-box2);
     font-weight: var(--txt-semibold);
 }
@@ -617,9 +613,7 @@ col.name {
 #dashboard .secondary {
     margin-block: 0.25em;
     padding: 0.25em;
-    border-width: var(--border-width);
-    border-style: solid;
-    border-color: var(--border3);
+    border: var(--border-width) solid var(--border3);
     box-shadow: var(--shadow);
     background-color: var(--bg6);
 }
@@ -672,12 +666,6 @@ col.name {
     content: "!";
 }
 
-/*
-ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
-    display: flex;
-    margin-right: 24em;
-}
-
 /*============================================================
 >> 06 REGION: FOOTER
 ============================================================*/
@@ -687,7 +675,6 @@ ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
     width: 100%;
     max-width: 100%;
     padding: 3% 5%;
-    margin-top: 2%;
     border-top: var(--border-width) solid var(--border2);
     background: linear-gradient(to top, var(--bg1) 70%, var(--bg2) 100%);
     overflow: hidden;
@@ -1225,6 +1212,17 @@ textarea.LV_invalid_field:is(:hover, :focus) {
     color: var(--txt-alt2);
 }
 
+/* Ensure modals keep original positioning */
+#modal .bookmark p.status {
+    right: 0.75em;
+}
+
+#modal .footer .action.modal-closer {
+    bottom: 4px;
+    position: absolute;
+    right: 8px;
+}
+
 /*>========== MODE: DYNAMIC ==========<*/
 
 div.dynamic {
@@ -1264,6 +1262,11 @@ form.single input[type="submit"] {
 .dynamic form dl {
     margin: 0;
     padding: 0.643em 0;
+}
+
+#new_collection_item>dl:nth-child(2) {
+    display: flex;
+    align-items: center;
 }
 
 .dynamic form fieldset,
@@ -1323,6 +1326,7 @@ input::file-selector-button {
     /* prevent text overflow */
     color: var(--int-btn-txt);
     transition: 25ms ease-out;
+    ;
 }
 
 .resp-sharing-button {
@@ -1364,10 +1368,10 @@ a.current,
 a.current:hover,
 a:link.current,
 .current a:visited {
-    border-color: var(--int-current-border);
+    border-color: var(--int-btn-hgl-border);
     box-shadow: none;
-    background: var(--int-current-bg);
-    color: var(--int-current-txt);
+    background: var(--int-btn-hgl-bg);
+    color: var(--int-btn-hgl-txt);
     cursor: default;
 }
 
@@ -1770,6 +1774,24 @@ a.tag:hover {
     background-color: var(--tag-default-bg);
 }
 
+/*>>========== COLLECTION TAGS ==========<<*/
+
+/* hide commas between blurb fandom and collection tags */
+.blurb h5.fandoms.heading,
+.blurb h5.tags.heading {
+    margin-right: -5px;
+    color: transparent;
+}
+
+/* repair fandom and collection heading tags */
+.blurb h5.fandoms.heading a.tag,
+.blurb h5.tags.heading a.tag {
+    box-sizing: border-box;
+    margin-right: 5px;
+    letter-spacing: initial;
+    font-weight: 400
+}
+
 /*>========== GROUP: TAG CLOUDS ==========<*/
 
 a.cloud1 {
@@ -2078,72 +2100,6 @@ li.picture.blurb,
     /* required for own mystery blurbs */
 }
 
-/*>========== BLURB HEADER LAYOUT ==========<*/
-
-.blurb .header:has(ul.required-tags) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0;
-}
-
-.blurb .header .heading {
-    margin: 0;
-}
-
-/* work title and author */
-.blurb .header h4.heading {
-    order: 1;
-    flex: 1;
-    box-sizing: border-box;
-    padding-right: 11ch;
-    font-size: 1.1em;
-    text-align: left;
-}
-
-/* reposition fandom tags below title */
-.blurb h5.fandoms.heading {
-    order: 4;
-    margin-top: 0.5em;
-}
-
-/* hide empty space on prompts without fandoms */
-.blurb h5.fandoms.heading:not(:has(a.tag)) {
-    height: 0;
-}
-
-/* reposition content rating icons */
-.blurb .header ul.required-tags {
-    order: 3;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 4px;
-    position: unset;
-    width: 100%;
-    margin-top: 0.429em;
-    padding-top: 0.643em;
-    border-top: var(--border-width) solid var(--border2);
-}
-
-/* reset positioning for content icons */
-.blurb ul.required-tags,
-.blurb ul.required-tags li,
-.blurb ul.required-tags li+li+li,
-.blurb ul.required-tags li+li+li+li,
-.blurb ul.required-tags li a {
-    position: unset;
-    width: unset;
-    height: unset;
-    margin: 0;
-    padding: 0;
-}
-
-.blurb .header p.notice {
-    order: 6;
-    width: 100%;
-    margin: 0.5em 0 0 0;
-}
-
 /*>========== MODIFICATION: PICTURE ==========<*/
 /* indices with icon pictures: collections, users, skins, mystery blurbs */
 
@@ -2191,7 +2147,7 @@ li.picture.blurb,
 }
 
 .bookmark .blurb h4.heading {
-    padding-right: 14ch;
+    padding-right: 6ch;
 }
 
 .bookmark p.status {
@@ -2202,7 +2158,7 @@ li.picture.blurb,
     margin: 0;
 }
 
-/* Center the bookmark ribbon over the status icon by matching widths */
+/* Create bookmark ribbon */
 .bookmark .blurb p.status a:not(.short a)::before {
     position: absolute;
     top: -5px;
@@ -2211,7 +2167,7 @@ li.picture.blurb,
     z-index: -1;
     box-sizing: border-box;
     height: 40px;
-    border-inline: 12.5px solid;
+    border-inline: 14px solid;
     border-bottom: 5.5px solid transparent;
     border-radius: 0 0 0.2rem 0.2rem;
     content: "";
@@ -2220,19 +2176,6 @@ li.picture.blurb,
 /* Ensure modals keep original positioning */
 #modal .bookmark p.status {
     right: 0.75em;
-}
-
-/* create bookmark ribbon using pseudo-element */
-.bookmark .blurb p.status a:not(.short a)::before {
-    position: absolute;
-    top: -5px;
-    z-index: -1;
-    box-sizing: border-box;
-    height: 40px;
-    border-inline: 14px solid;
-    border-bottom: 5.5px solid transparent;
-    border-radius: 0 0 0.2rem 0.2rem;
-    content: "";
 }
 
 /* hide bookmark count icon - available in stats */
@@ -2398,6 +2341,21 @@ li.comment:not(:has(.edit_comment)) {
     border-radius: var(--icon-primary-radius);
 }
 
+/* comment icon animation */
+/* credit to lfkyyy and the Hogwarts skin - https://github.com/Ifkyyy/AO3-skins */
+.comment img.icon,
+.comment span.icon,
+.comment div.icon>a {
+    border-radius: 50%;
+    transition: border-radius 150ms linear;
+}
+
+.comment span.icon:hover,
+.comment div.icon>a:is(:hover, :focus),
+.comment div.icon>a:is(:hover, :focus)>.icon {
+    border-radius: .5em;
+}
+
 .comment h4.byline {
     align-content: center;
     order: 2;
@@ -2492,6 +2450,7 @@ li.comment:has(.edit_comment) {
 .logged-in .splash>.module {
     box-sizing: border-box;
     margin-inline: 0;
+    padding: 0;
 }
 
 .logged-in .splash>.module {
@@ -2615,6 +2574,12 @@ li.comment:has(.edit_comment) {
 .icon,
 .primary .icon {
     border-radius: var(--icon-primary-radius);
+    transition: border-radius 150ms linear;
+}
+
+.icon:hover,
+.primary .icon:hover {
+    border-radius: 0.5em;
 }
 
 /* scrollable CSS code boxes on skins pages */
@@ -2645,9 +2610,10 @@ li.comment:has(.edit_comment) {
 form.search input[type="text"] {
     border: var(--border-width) solid var(--border2);
     border-radius: var(--radius-small);
-    background-color: var(--int-bg);
+    background-color: var(--int-search);
     background-image: none;
     color: var(--txt-main);
+    box-shadow: none;
 }
 
 li.search fieldset {
@@ -2921,6 +2887,7 @@ dl.nomination {
     padding: 0 2%;
     font-size: var(--txt-size-work);
     /* adjust work font size here */
+    color: var(--txt-size-work);
 }
 
 /*>========== IMAGES ==========<*/
@@ -3035,13 +3002,7 @@ div.error,
     align-items: end;
     justify-content: center;
     z-index: 1;
-    width: 96%;
-    max-width: 96%;
-    margin-top: 1%;
-    margin-right: 2%;
-    margin-bottom: 0;
-    margin-left: 2%;
-    padding: 1em 0 1em 2em;
+    padding: 0.429em;
     border-bottom: var(--border-width) solid var(--alert-txt);
     background: var(--alert-bg);
 }
@@ -3279,7 +3240,6 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 }
 
 .tagset .primary .icon,
-.tagset .primary .icon,
 .tag .primary .icon,
 .index .tagset .icon {
     box-sizing: border-box;
@@ -3443,7 +3403,7 @@ img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
 img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-yes-01.png");
     background-color: var(--icon-warning-yes);
-    background-position: center -2px;
+    background-position: center -1px;
 }
 
 .required-tags .external-work,
@@ -3877,7 +3837,7 @@ dl.stats dd {
 
 * {
     scrollbar-color: var(--border4) var(--bg5);
-    scrollbar-width: thin;
+    scrollbar-width: auto;
 }
 
 *::selection {
@@ -3987,6 +3947,10 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 }
 
 /* user notes styling */
+.create-note-btn {
+    border-radius: 8px !important;
+}
+
 .user-note-preview>div>div,
 .note-textarea {
     border: 1px solid var(--border3) !important;
@@ -4036,8 +4000,8 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     border-top-right-radius: var(--radius-mid);
 }
 
-/*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
-/* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
+/*>========== MISC USERSCRIPT STYLING ==========<*/
+/* https://greasyfork.org/en/users/1498004 */
 
 input[type="range"] {
     background: transparent;
@@ -4061,4 +4025,9 @@ input[type="range"]::-moz-range-thumb {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+input[type="checkbox"]:checked+[class*="toggle-slider"],
+input[type="checkbox"]:checked+[class*="toggle-track"] {
+    background-color: var(--link-visited) !important;
 }
