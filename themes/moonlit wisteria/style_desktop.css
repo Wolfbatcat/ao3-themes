@@ -312,6 +312,11 @@ a[rel="author"], .byline a {
   font-style: italic !important;
 }
 
+a.tag:hover {
+	background: linear-gradient(135deg, var(--clr-indigo) 0%, var(--clr-violet) 70%, var(--clr-rose) 100%) !important;
+	color: var(--clr-bg) !important;
+}
+
 /* ============================================
    4. HEADER & NAVIGATION
    ============================================ */
@@ -1570,10 +1575,10 @@ li.series.blurb {
   border: none !important;
   border-bottom: 1px solid var(--clr-lavender-035) !important;
   border-image: linear-gradient(90deg, transparent 0%, var(--clr-blush) 20%, var(--clr-rose) 50%, var(--clr-violet) 80%, transparent 100%) 1 0 0 0 !important; /* "1 0 0 0" applies the gradient to the top edge only */
-  border-radius: 0 !important;
+  border-radius: 6px !important;
   border-top: 2px solid !important;
   border-top-color: transparent !important;
-  box-shadow: none !important;
+  box-shadow: none;
   margin-bottom: 2em !important;
   padding: 0.75em 0.75em 0.643em;
 }
@@ -4357,6 +4362,7 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 .user-note-preview>div>div,
 .note-textarea {
     border: 1px solid var(--clr-rose) !important;
+    border-radius: 6px !important;
 }
 
 .user-note-preview>div>div {
@@ -4372,6 +4378,7 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 
 .user-note-preview details {
     border-color: var(--clr-rose) !important;
+    border-radius: 6px !important;
     padding: 0 !important;
     margin: 18px 0 1px 0 !important;
 }
