@@ -246,6 +246,11 @@ h2.heading, h3.heading, h4.heading {
   padding-bottom: 4px !important;
 }
 
+/* Removed bottom border from filter labels */
+h4.heading {
+  border-bottom: 0 !important;
+}
+
 /* AO3 default gives landmark headings a red background pill. They serve as
    skip-navigation anchors, not visual headings — collapse them entirely rather
    than just removing the color, to prevent the empty pill taking up vertical space. */
