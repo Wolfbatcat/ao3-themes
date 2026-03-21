@@ -1,26 +1,69 @@
 /*
- Theme Name: Mobile add-on to Moonlit Wisteria, - AO3 Site Skin
+ Theme Name: Mobile add-on to Moonlit Wisteria - AO3 Site Skin
  Author: intothisshadow
  Author URI: https://www.so-obsessed.com
 
  ============================================
 
  HOW TO USE:
- 1. Make a new site skin with the Moonlit Wisteria code (style_desktop.css in this same repository/zip.) and be sure to select "all" in the Media section. Save skin.
- 2. Make another new site skin with the code below, selecting "only screen and (max-width: 42em)" in the Media section, and then also choosing Moonlit Wisteria as the parent skin. Save and active.
+ 1. Make a new site skin with the Moonlit Wisteria code (style_desktop.css in this
+    same repository/zip) and select "all" in the Media section. Save skin.
+ 2. Make another new site skin with the code below, selecting
+    "only screen and (max-width: 62em)" AND "only screen and (max-width: 42em)"
+    in the Media section, then choose Moonlit Wisteria as the parent skin.
+    Save and activate.
 
  ============================================
 
-/* MEDIA: only screen and (max-width: 42em), handheld ENDMEDIA */
+ Table of contents:
+ 0.  Root Variables
+ 1.  Global / Reset
+ 2.  Typography
+ 4.  Header & Navigation
+ 5.  Greeting / User Menu
+ 6.  Sidebar & Dashboard
+ 7.  Buttons & Actions
+ 8.  Forms & Inputs
+ 9.  Tag System
+ 10. Work Blurb Cards
+ 11. Work Page
+ 12. Comments
+ 15. Front Page (Splash)
+ 17. Profile & Stats Pages
+ 21. Footer
 
-/* --- Prevent horizontal scroll ---
-   AO3 sets min-width on #outer; box-sizing reset ensures padding never adds to 100% width. */
+ ============================================ */
 
-html, body {
-  background-color: #F5EDE8 !important; /* fallback if #outer gradient fails */
-  overflow-x: hidden !important;
+
+/* ============================================
+   0.  ROOT VARIABLES
+   ============================================ */
+
+:root {
+
+  /* --- UI Parameters --- */
+
+  /* Space on left/right side of screen */
+  --margins-header:  1rem;    /* header on desktop */
+  --margins-main:    5%;      /* site contents on desktop */
+  --margins-narrow:  2.5%;    /* site contents and header on tablet/mobile */
+  --border-width:    1px;     /* for almost all borders */
 }
 
+
+/* ============================================
+   1.  GLOBAL / RESET
+   ============================================ */
+
+/* Converts sidebar to top menu */
+#inner {
+  box-sizing: border-box !important;
+  flex-flow: column !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+/* AO3 sets min-width on #outer; box-sizing reset ensures padding never adds to 100% width. */
 #outer {
   background: linear-gradient(160deg, #F5EDE8 0%, #eaecf5 50%, #EDE8F5 100%) !important;
   box-sizing: border-box !important;
@@ -29,75 +72,120 @@ html, body {
   width: 100% !important;
 }
 
-#inner {
+/* Prevent horizontal scroll; background-color is a fallback if #outer gradient fails */
+html,
+body {
+  background-color: #F5EDE8 !important;
+  overflow-x: hidden !important;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box !important;
-  min-width: 0 !important;
+}
+
+/* Main content area: full width */
+#main,
+#main.dashboard {
+  margin-left: 0 !important;
+  padding-inline: var(--margins-narrow) !important;
   width: 100% !important;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box !important;
+/* Prevent the filter box from overlapping the pagination buttons */
+.region:has(ol.pagination.actions) form.filters {
+  margin-bottom: 7.5em !important;
 }
 
-/* --- Base font size: scale down from desktop 18px --- */
 
+/* ============================================
+   2.  TYPOGRAPHY
+   ============================================ */
+
+/* Base font size: scale down from desktop 18px */
 body {
   font-size: 15px !important;
 }
 
-/* --- Headings: scale down proportionally --- */
-
-#main h1, #content h1 { font-size: 1.8em !important; }
-#main h2, #content h2 { font-size: 1.5em !important; }
-#main h3, #content h3 { font-size: 1.25em !important; }
-#main h4, #content h4 { font-size: 1.1em !important; }
-#main h5, #content h5 { font-size: 1em !important; }
-
-/* --- Main content area: full width --- */
-#main, #main.dashboard {
-  margin-left: 0 !important;
-  width: 100% !important;
+/* Headings: scale down proportionally */
+#main h1,
+#content h1 {
+  font-size: 1.8em !important;
 }
 
-.splash {
-  padding: 0 0.5em !important;
+#main h2,
+#content h2 {
+  font-size: 1.5em !important;
 }
 
-/* User dashboard primary column → full width */
-.user .primary {
-  float: none !important;
+#main h3,
+#content h3 {
+  font-size: 1.25em !important;
+}
+
+#main h4,
+#content h4 {
+  font-size: 1.1em !important;
+}
+
+#main h5,
+#content h5 {
+  font-size: 1em !important;
+}
+
+
+/* ============================================
+   4.  HEADER & NAVIGATION
+   ============================================ */
+
+#header {
   margin: 0 !important;
-  width: 100% !important;
 }
 
-/* --- Profile page: nav buttons overlap icon ---
-   AO3's narrow CSS re-floats p.icon right after our stylesheet, so clear/float
-   overrides don't stick. padding-top pushes the nav below the icon height. */
-.user.home .primary.header.module ul.navigation.actions {
-  padding-top: 7em !important;
+#header .heading {
+  margin-left: var(--margins-narrow) !important;
 }
 
-/* --- Header: compact on mobile --- */
-
-/* Shrink greeting text */
-#greeting,
-#greeting a,
-#greeting a:visited {
-  font-size: 0.8em !important;
-  font-weight: normal !important;
+/* Collection header */
+#header h2 {
+  text-align: center !important;
 }
 
-/* Hide greeting icon */
-#greeting .icon,
-#greeting .user .icon {
-  display: none !important;
+#header .primary {
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
 }
 
-/* Shrink search form */
+/* --- Site title: scale down --- */
+#header h1,
+#header h1 span,
+#header h1 sup {
+  font-size: 0.9rem !important;
+}
+
+/* --- Navigation items: allow wrapping on narrow screens --- */
+#header .primary.navigation > ul > li,
+#header .primary.navigation > ol > li {
+  height: auto !important;
+  vertical-align: top !important;
+}
+
+#header .primary.navigation a,
+#header .primary.navigation a:visited {
+  font-size: 0.85em !important;
+  padding: 0.15em 0.35em !important;
+  white-space: normal !important;
+}
+
+/* --- Search form: compact on mobile --- */
 #header form[action="/search"],
 #header .search form,
 #header form.search {
+  flex-shrink: 1 !important;
   font-size: 0.75em !important;
+  min-width: 0 !important;
 }
 
 #header form[action="/search"] input[type="text"],
@@ -116,31 +204,79 @@ body {
   padding: 0.2em 0.4em !important;
 }
 
-#header h1,
-#header h1 span,
-#header h1 sup {
-  font-size: 0.9rem !important;
+
+/* ============================================
+   5.  GREETING / USER MENU
+   ============================================ */
+
+#login,
+#greeting {
+  margin-right: var(--margins-narrow) !important;
 }
 
-#header .primary.navigation > ul > li,
-#header .primary.navigation > ol > li {
-  height: auto !important;
-  vertical-align: top !important;
+/* Shrink greeting text */
+#greeting,
+#greeting a,
+#greeting a:visited {
+  font-size: 0.8em !important;
+  font-weight: normal !important;
 }
 
-#header .primary.navigation a,
-#header .primary.navigation a:visited {
-  font-size: 0.85em !important;
-  padding: 0.15em 0.35em !important;
-  white-space: normal !important;
+/* Hide greeting icon */
+#greeting .icon,
+#greeting .user .icon {
+  display: none !important;
 }
 
-/* --- Dashboard sidebar → horizontal top bar --- */
 
+/* ============================================
+   6.  SIDEBAR & DASHBOARD
+   ============================================ */
+
+/* --- Convert sidebar to horizontal top bar --- */
 div#dashboard,
 div#dashboard.own {
+  border-bottom: var(--border-width) solid 1px var(--clr-lavender-soft) !important;
   border-radius: 0 !important;
-  margin-bottom: 0.5em !important;
+  border-right: none !important;
+  height: auto !important;
+  margin: 0 0 0.5em 0 !important;
+  max-height: unset !important;
+  max-width: unset !important;
+  min-width: unset !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  text-align: center !important;
+  top: unset !important;
+  width: 100% !important;
+  z-index: 2 !important;
+}
+
+/* Use > to target only the direct-child nav ul, not nested .secondary sub-menus */
+div#dashboard > ul {
+  align-items: center !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Put menu items inline with each other */
+div#dashboard a,
+div#dashboard span {
+  display: inline-block !important;
+  margin-block: var(--border-width) !important;
+}
+
+div#dashboard .secondary {
+  left: 50% !important;
+  max-width: 95% !important;
+  position: absolute !important;
+  transform: translate(-50%, 0) !important;
+  width: fit-content !important;
 }
 
 /* AO3 narrow gives .dashboard .landmark clear:both — our skin had it removed
@@ -150,10 +286,16 @@ div#dashboard .landmark {
   clear: both !important;
 }
 
-/* --- Buttons & actions: smaller on mobile --- */
 
-.actions a, .actions a:link,
-.action, .action:link,
+/* ============================================
+   7.  BUTTONS & ACTIONS
+   ============================================ */
+
+/* Smaller on mobile */
+.actions a,
+.actions a:link,
+.action,
+.action:link,
 .actions button,
 .actions input,
 input[type="submit"],
@@ -164,10 +306,140 @@ button,
   padding: 0.15em 0.5em !important;
 }
 
-/* --- Splash page layout --- */
 
-/* AO3 narrow collapses all splash modules to full width.
-   Undo all our desktop float/width assignments. */
+/* ============================================
+   8.  FORMS & INPUTS
+   ============================================ */
+
+/* Inbox filter sidebar and other forms are already handled by AO3 narrow;
+   reduce the custom fieldset border-radius to match the mobile scale. */
+fieldset {
+  border-radius: 6px !important;
+}
+
+
+/* ============================================
+   9.  TAG SYSTEM
+   ============================================ */
+
+/* --- Fandom tags: wrap as flex row instead of stacking --- */
+h5.fandoms.heading,
+.fandoms.heading {
+  align-items: baseline !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+h5.fandoms.heading li,
+.fandoms.heading li {
+  display: inline !important;
+  list-style: none !important;
+  margin: 0.15em 0.25em 0.15em 0 !important;
+}
+
+.fandoms a.tag,
+h5.fandoms.heading a {
+  max-width: 80vw !important;
+  padding: 1px 7px !important;
+}
+
+
+/* ============================================
+   10. WORK BLURB CARDS
+   ============================================ */
+
+/* Reduce padding and corner radius on small screens */
+li.work.blurb.group,
+li.bookmark.blurb.group,
+li.series.blurb.group,
+li.collection.blurb.group,
+li.skins.own.picture.blurb.group {
+  border-radius: 6px !important;
+  padding: 0.6em 0.75em !important;
+}
+
+
+/* ============================================
+   11. WORK PAGE
+   ============================================ */
+
+/* Full width with minimal indent on narrow screens; tighter line height */
+.userstuff {
+  line-height: 1.6 !important;
+  margin-bottom: 1em !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0.75em !important;
+  padding: 0.4em 0.4em 0.4em 0.6em !important;
+  width: 100% !important;
+}
+
+#chapters .userstuff {
+  line-height: 1.6 !important;
+}
+
+/* Meta box: reduce padding and radius */
+dl.work.meta.group {
+  border-radius: 6px !important;
+  padding: 0.75em 0.6em 0.6em !important;
+}
+
+/* Tighten field label spacing */
+dl.work.meta.group dt {
+  padding-top: 0.2em !important;
+}
+
+/* Stats row: flex wrap so pairs sit inline and wrap cleanly */
+dl.work.meta.group dd.stats dl.stats {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+dl.work.meta.group dd.stats dl.stats dt,
+dl.work.meta.group dd.stats dl.stats dd {
+  padding-top: 0 !important;
+}
+
+dl.work.meta.group dd.stats dl.stats dt {
+  flex-basis: auto !important;
+  letter-spacing: 0 !important;
+}
+
+dl.work.meta.group dd.stats dl.stats dd {
+  margin-right: 0.5em !important;
+}
+
+
+/* ============================================
+   12. COMMENTS
+   ============================================ */
+
+/* Reduce nested thread indentation */
+.thread .thread {
+  margin-left: 0.5em !important;
+}
+
+li.comment blockquote {
+  line-height: 1.55 !important;
+}
+
+/* Smaller comment icons */
+li.comment .icon img {
+  height: 55px !important;
+  width: 55px !important;
+}
+
+
+/* ============================================
+   15. FRONT PAGE (SPLASH)
+   ============================================ */
+
+.splash {
+  padding: 0 0.5em !important;
+}
+
+/* AO3 narrow collapses all splash modules to full width;
+   undo desktop float/width assignments. */
 .splash .browse,
 .splash div.news,
 .splash .intro,
@@ -201,108 +473,47 @@ button,
   float: none !important;
 }
 
-/* --- Blurb cards --- */
 
-/* Reduce padding and radius on small screens */
-li.work.blurb.group,
-li.bookmark.blurb.group,
-li.series.blurb.group,
-li.collection.blurb.group,
-li.skins.own.picture.blurb.group {
-  border-radius: 6px !important;
-  padding: 0.6em 0.75em !important;
-}
+/* ============================================
+   17. PROFILE & STATS PAGES
+   ============================================ */
 
-/* --- Line height: tighter on mobile --- */
-
-.userstuff,
-#chapters .userstuff {
-  line-height: 1.6 !important;
-}
-
-li.comment blockquote {
-  line-height: 1.55 !important;
-}
-
-/* --- Work meta: tighten field spacing --- */
-
-dl.work.meta.group dt {
-  padding-top: 0.2em !important;
-}
-
-/* --- Work page --- */
-
-/* On narrow screens give userstuff full width with minimal indent */
-.userstuff {
-  margin-bottom: 1em !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-top: 0.75em !important;
-  padding: 0.4em 0.4em 0.4em 0.6em !important;
+/* User dashboard primary column → full width */
+.user .primary {
+  float: none !important;
+  margin: 0 !important;
   width: 100% !important;
 }
 
-/* Meta box: reduce padding and radius */
-dl.work.meta.group {
-  border-radius: 6px !important;
-  padding: 0.75em 0.6em 0.6em !important;
+/* AO3's narrow CSS re-floats p.icon right after our stylesheet, so clear/float
+   overrides don't stick. padding-top pushes the nav below the icon height. */
+.user.home .primary.header.module ul.navigation.actions {
+  padding-top: 7em !important;
 }
 
-/* Stats row: flex wrap so pairs sit inline and wrap cleanly */
-dl.work.meta.group dd.stats dl.stats {
+
+/* ============================================
+   21. FOOTER
+   ============================================ */
+
+#footer ul {
+  width: 100% !important;
+}
+
+#footer ul.navigation.actions {
   display: flex !important;
   flex-wrap: wrap !important;
 }
 
-dl.work.meta.group dd.stats dl.stats dt,
-dl.work.meta.group dd.stats dl.stats dd {
-  padding-top: 0 !important;
+#footer ul li.module {
+  display: block !important;
+  flex-basis: 47.5% !important;
+  float: none !important;
+  max-width: unset !important;
 }
 
-dl.work.meta.group dd.stats dl.stats dt {
-  flex-basis: auto !important;
-  letter-spacing: 0 !important;
+/* row-gap isn't supported on AO3; use margin on the first row instead */
+#footer ul li.module:nth-of-type(-n+2) {
+  margin-bottom: 5% !important;
 }
 
-dl.work.meta.group dd.stats dl.stats dd {
-  margin-right: 0.5em !important;
-}
-
-/* --- Forms --- */
-
-/* Inbox filter sidebar and other forms already handled by AO3 narrow,
-   but our custom fieldset styling needs radius reduction */
-fieldset {
-  border-radius: 6px !important;
-}
-
-/* --- Comments --- */
-
-/* Reduce nested thread indentation */
-.thread .thread {
-  margin-left: 0.5em !important;
-}
-
-/* --- Fandom tags: wrap as flex row instead of stacking --- */
-
-h5.fandoms.heading,
-.fandoms.heading {
-  align-items: baseline !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
-
-h5.fandoms.heading li,
-.fandoms.heading li {
-  display: inline !important;
-  list-style: none !important;
-  margin: 0.15em 0.25em 0.15em 0 !important;
-}
-
-.fandoms a.tag,
-h5.fandoms.heading a {
-  max-width: 80vw !important;
-  padding: 1px 7px !important;
-}
-
-/* ENDMEDIA */
