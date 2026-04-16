@@ -272,7 +272,7 @@ html body #header h1.heading a {
     height: 0 !important;
     padding-top: 43.75% !important;
     margin: 10px auto !important;
-    background-image: url("https://64.media.tumblr.com/1b1358dcf1847d95d1d600d53a7763e7/aff69673f81f1cb2-2a/s2048x3072/24062701201186fbaaab4b214516e6f753abe442.png") !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-6.png") !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     background-size: contain !important;
@@ -458,7 +458,7 @@ html body #outer #header h1.heading a {
 
 /* post new work icon */
 #header #greeting .dropdown>a[href*="/works/new"] {
-    content: url("https://64.media.tumblr.com/2d84ca2c751f08b78be62e9c7661a047/2f52ba760e32ea8f-5f/s2048x3072/7063a33bb603dcb6e5f7149571d53e86d510983a.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-1.png");
     color: transparent !important;
     font-size: 0;
     border-radius: 0 !important;
@@ -466,7 +466,7 @@ html body #outer #header h1.heading a {
 
 /* user profile icon */
 #header #greeting .dropdown>a[href*="/users/"] {
-    content: url("https://64.media.tumblr.com/5a6733e705428b4cbffcfb52c148de58/2f52ba760e32ea8f-45/s2048x3072/c0cdba6f22f05668d4640a4b53f6b20ccc392ade.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-2.png");
     color: transparent !important;
     font-size: 0;
     border-radius: 0 !important;
@@ -474,7 +474,7 @@ html body #outer #header h1.heading a {
 
 /* log out icon */
 #header #greeting a[href*="/users/logout"] {
-    content: url("https://64.media.tumblr.com/bbbde1669ef710f5e0acdb7746c80036/2f52ba760e32ea8f-43/s2048x3072/33229093bcabc764b76d8eec9a410a1122ae35f4.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-3.png");
     color: transparent !important;
     font-size: 0;
     border-radius: 0 !important;
@@ -541,7 +541,7 @@ html body #outer #header h1.heading a {
     width: 100% !important;
     height: 26px !important;
     margin: 0 !important;
-    background-image: url("https://64.media.tumblr.com/8aedf7d0aae0e60495c8e40affa37888/6e37566be43307d8-4c/s2048x3072/d99f634210c244d859b233716d952c81733da808.png") !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-1.png") !important;
     background-repeat: repeat-x !important;
     background-position: center bottom !important;
     background-size: 110px auto !important;
@@ -737,10 +737,10 @@ html body #outer #header h1.heading a {
     z-index: -1;
     opacity: 0.75;
     background-image:
-        url("https://64.media.tumblr.com/f254d4315d42d1897f7077456d585b44/1149228f6465cbf7-01/s500x750/2b01ded5830bf5e5f7b942001643197e1b55b774.png"),
-        url("https://64.media.tumblr.com/ff171b7438cad32051bc0a08c7ca1b76/1149228f6465cbf7-65/s500x750/aa13ec6697bedd621961b5e1724ad947fd6be87d.png"),
-        url("https://64.media.tumblr.com/15209c75511aa908a92b9a54a1b46715/1149228f6465cbf7-02/s500x750/a14dda93e5257020882a891a892f70606b50f0aa.png"),
-        url("https://64.media.tumblr.com/6aab04b5d4d6fa03a709277c35b047a6/1149228f6465cbf7-fc/s500x750/448652a5f16995da9993afa07a4ce17695186146.png");
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-2.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-3.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-4.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-5.png");
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position:
         left 0.5rem top 0.5rem,
@@ -2095,7 +2095,7 @@ fieldset fieldset.listbox {
     width: 1.5em;
     height: 1.5em;
     opacity: 0.9;
-    background-image: url("https://64.media.tumblr.com/60f3190e5272164163563342c980de24/855358a45e824f08-87/s2048x3072/128334d6592107aea6a8382d730c9b9798a81205.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-7.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -2259,8 +2259,8 @@ dl.meta::before,
     height: 100% !important;
     z-index: -1 !important;
     opacity: 0.6 !important;
-    background-image: url("https://64.media.tumblr.com/02df4ca4c275874f51dd542f3e9d3f36/6ef867351823b347-af/s2048x3072/242157e25a0112ea21902a45df3787300d80c6cf.png"),
-        url("https://64.media.tumblr.com/7d658d33d770de4a6c60354b7e05c76c/cfb02486730c869a-eb/s2048x3072/f5b15d757b886b7cb31cbcc7797f89f730033111.png") !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-8.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-9.png") !important;
     background-repeat: no-repeat, no-repeat !important;
     background-position: left top, right bottom !important;
     background-size: 85px auto, 85px auto !important;
@@ -2800,7 +2800,7 @@ li.comment:has(.edit_comment) {
     bottom: 0;
     left: 0;
     z-index: 0;
-    background-image: url("https://64.media.tumblr.com/6b32e756cd987217aef2f1e9a8ce8b6b/c936c04158cc59ef-b3/s1280x1920/1cd680142a2dfa072f18fc1dafada140cd687bf0.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-11.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 220px auto;
@@ -3161,7 +3161,7 @@ dl.nomination {
     width: 100% !important;
     height: 24px !important;
     margin-top: 0.3em !important;
-    background-image: url("https://64.media.tumblr.com/da7cb206a13daa4e97fcf8add6be66dd/72478ad8fcd19ffc-f5/s2048x3072/b7eb0b9eceded61a151731fdc7c6df514eaff0bb.png") !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-10.png") !important;
     background-repeat: repeat-x !important;
     background-position: center center !important;
     background-size: auto 100% !important;
@@ -3176,7 +3176,7 @@ dl.nomination {
     border: none !important;
     height: 24px !important;
     margin: 1em 0 !important;
-    background-image: url("https://64.media.tumblr.com/da7cb206a13daa4e97fcf8add6be66dd/72478ad8fcd19ffc-f5/s2048x3072/b7eb0b9eceded61a151731fdc7c6df514eaff0bb.png") !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-10.png") !important;
     background-repeat: repeat-x !important;
     background-position: center center !important;
     background-size: auto 100% !important;
@@ -3821,7 +3821,7 @@ div:has(> p.kudos)::before {
     position: absolute;
     width: 75px;
     height: 75px;
-    background-image: url("https://64.media.tumblr.com/9a4c394925ef3b819105330b29e9a357/0a92decbb1ac90f6-02/s1280x1920/d326964af14addb47c2d15af5636f530684a907c.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-kudos.png");
     background-size: cover;
     content: "";
     filter: var(--kudos-icon);
