@@ -2369,7 +2369,7 @@ ol.comment.index.group .unread {
     color: #ecf3e6 !important;
     font-family: -apple-system, BlinkMacSystemFont,
         "PingFang SC", "Microsoft YaHei",
-        "Helvetica Neue", Arial, sans-serif !important;
+        "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5 !important;
     font-size: 0.9rem !important;
 }
@@ -2420,7 +2420,7 @@ ol.comment.index.group .unread {
     color: #ecf3e6 !important;
     font-family: -apple-system, BlinkMacSystemFont,
         "PingFang SC", "Microsoft YaHei",
-        "Helvetica Neue", Arial, sans-serif !important;
+        "Helvetica Neue", Arial, sans-serif;
 }
 
 img[src$="/images/lockblue.png"] {
@@ -3579,7 +3579,7 @@ h4.viewed a {
     content: "Summary";
     font-size: 1.1rem !important;
     color: #546e7a !important;
-    font-family: "Garamond", "Baskerville", serif !important;
+    font-family: "Garamond", "Baskerville", serif;
     display: block !important;
     visibility: visible !important;
     letter-spacing: 0.05em !important;
@@ -3590,7 +3590,7 @@ h4.viewed a {
     content: "Notes";
     font-size: 1.1rem !important;
     color: #546e7a !important;
-    font-family: "Garamond", "Baskerville", serif !important;
+    font-family: "Garamond", "Baskerville", serif;
     display: block !important;
     visibility: visible !important;
     letter-spacing: 0.05em !important;
