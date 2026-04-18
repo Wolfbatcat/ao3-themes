@@ -614,6 +614,12 @@ a.tag:hover {
    6. SIDEBAR & DASHBOARD
    ============================================ */
 
+#dashboard {
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+
 div#dashboard, .sidebar {
   background: linear-gradient(160deg, var(--clr-lavender-soft) 0%, var(--clr-mist-blue) 100%) !important;
   border: 1px solid var(--clr-lavender-soft) !important;
@@ -739,7 +745,7 @@ div#dashboard .current a, .sidebar .current a {
 }
 
 .user.home p.icon img {
-  border-radius: 4px !important;
+  border-radius: 9999px !important;
   box-shadow: 0 0 0 3px var(--clr-violet), 0 0 0 5px var(--clr-rose) !important;
   outline: 3px solid transparent !important;
 }

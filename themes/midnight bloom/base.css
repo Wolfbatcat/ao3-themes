@@ -2804,7 +2804,6 @@ li.comment:has(.edit_comment) {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 220px auto;
-    opacity: 0.8;
     filter: var(--header-icon);
 }
 
