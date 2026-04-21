@@ -34,7 +34,6 @@ try {
       lines = lines.map(line => {
         if (line.includes('Updated:')) {
           updated = true;
-          // Replace everything after "Updated:" with the new timestamp
           return line.replace(/Updated:.*/, `Updated:      ${dateTimeStr}`);
         }
         return line;
@@ -42,7 +41,6 @@ try {
 
       if (updated) {
         fs.writeFileSync(file, lines.join('\n'), 'utf-8');
-        // Re-stage the file with the updated timestamp
         execSync(`git add "${file}"`);
         console.log(`✓ ${path.basename(file)}`);
       }
