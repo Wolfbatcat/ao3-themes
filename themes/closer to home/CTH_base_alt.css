@@ -2309,6 +2309,10 @@ div.preface {
 }
 
 .chapter .preface {
+    border-top: 1.5px solid var(--border4);
+}
+
+.chapter.preface:last-child {
     border-top: none;
 }
 
