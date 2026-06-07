@@ -1,19 +1,19 @@
 /*============================================================
 
-                       Your Skin Name
+                       Midnight Bloom
            A Site Skin for the Archive of Our Own
-                      By Your Name
+                      By BlackBatCat
 
 ==============================================================
 SKIN METADATA
 ==============================================================
 
-  - Skin:         Your Skin Name (Desktop)
+  - Skin:         Midnight Bloom (Desktop)
   - File:         desktop.css
-  - Author:       Your Name
-  - Tumblr:       yourname
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-21 15:15 UTC
+  - Updated:      2026-06-07 20:03 UTC
   
   - Repository:   https://github.com/yourname/ao3-your-skin
   - Instructions: https://archiveofourown.org/works/[work-id]
@@ -30,6 +30,7 @@ DIRECTORY
 Numeric      = Skin structure from the "Archive 2.0 skin"
 Alphanumeric = Additions by ZerafinaCSS
 
+>> A0 GLOBAL VARIABLES, FONTS, AND TEXT DECORATIONS
 >> 01 BASIC LAYOUT SETTINGS
 >> 02 ELEMENTS
 >> 03 REGION: HEADER
@@ -54,6 +55,47 @@ Alphanumeric = Additions by ZerafinaCSS
 >> Z1 REPLACE THE ICONS AND IMAGES
 >> Z2 STATS ICONS WITH HOVER TEXT
 >> Z3 MISCELLANEOUS
+
+/*============================================================
+>> A0 GLOBAL VARIABLES, FONTS, AND TEXT DECORATIONS
+============================================================*/
+
+:root {
+
+/*>========== UI PARAMETERS ==========<*/
+
+  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
+  --margins-header:      1rem;                /* header on desktop */
+  --margins-main:        2.5%;                  /* site contents on desktop */
+  --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
+
+  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
+  --radius-small:        0.5rem;             /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          0.5rem;             /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          0.5rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-alt:          0.5rem;             /* header search box, buttons */
+  --radius-tag:          8px;         /* tags */
+
+  /* ICON BORDER-RADIUS */
+  --icon-content-radius: 0.25rem;             /* content and bookmark icon */
+  --icon-primary-radius: 50%;                 /* primary and comment icon */
+  --icon-index-radius:   0.75rem;             /* index icon */
+
+  /* BORDER WIDTH */
+  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
+
+  /* TEXT SIZE */
+  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+  --txt-size-work:       110%;                /* work text size */
+
+  /* TEXT BOLDNESS */
+  --txt-semibold:        600;                 /* font-weight hover effect */
+  --txt-bold:            700;                 /* font-weight for headings */
+
+  /* LINK DECORATION */
+  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
+
+}
 
 /*============================================================
 >> 01 BASIC LAYOUT SETTINGS

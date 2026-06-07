@@ -1,38 +1,29 @@
-.site-skin-metadata {
-content:
-"
-============================================================
+/*============================================================
 
-            ✦✦✦ Rosé Pine — Closer to Home ✦✦✦            
+                     ❦❦❦ Rosé Pine ❦❦❦                 
            A Site Skin for the Archive of Our Own          
-                      By ravenothere    
+                      By BlackBatCat   
 
 ==============================================================
 SKIN METADATA
 ==============================================================
 
-  - Skin:         Rosé Pine — Closer to Home (Normal Layout)
-  - File:         CTH_base.css
-  - Author:       ravenothere
-  - Tumblr:       ravenothere
+  - Skin:         Rosé Pine (Card Layout)
+  - File:         base_card.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
   - License:      MIT
   - Updated:      2026-06-07 20:03 UTC
 
-  - Repository:   https://github.com/ravenothere/AO3-Rose-Pine-Closer-to-Home
-  - Instructions: https://archiveofourown.org/works/80768621
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
 
-  - Original Skin:'Rosé Pine' by Blackbatcat          https://github.com/Wolfbatcat/ao3-rose-pine
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
 
-  - Base:         'neos' by ZerafinaCSS               https://archiveofourown.org/works/65849527
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
 
-  - Inspired by:  'Archive 2.0 skin' by AO3           https://archiveofourown.org/skins/873
-                  'Tide' by ElectricAlice             https://github.com/electricalice/Ao3-tide
-                  'Flat Squares Skin' by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
-
-============================================================";
-}
-
-/*
 ==============================================================
 DIRECTORY
 ==============================================================
@@ -78,31 +69,29 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
   --margins-header:      1rem;                /* header on desktop */
   --margins-main:        5%;                  /* site contents on desktop */
   --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
-  --workskin-width:      45em;               /* max width of work content on desktop */
 
   /* BLURB PADDING */
-  --blurb-padding: 0.75em;
-  --blurb-padding-neg: -0.75em;
+  --blurb-padding: 1.8em 2.2em 1.8em 2.2em;
+  --blurb-padding-neg: -1.8em -2.2em -1.8em -2.2em;
 
   /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
-  --radius-small:        0.75rem;             /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          0.75rem;             /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          0.75rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
-  --radius-alt:          0.75rem;             /* header search box, buttons */
-  --radius-tag:          0 15px 15px;         /* tags */
+  --radius-small:        0.5rem;             /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          0.5rem;             /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          0.5rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-alt:          0.5rem;             /* header search box, buttons */
+  --radius-tag:          8px;         /* tags */
 
   /* ICON BORDER-RADIUS */
   --icon-content-radius: 0.25rem;             /* content and bookmark icon */
   --icon-primary-radius: 50%;                 /* primary and comment icon */
-  --icon-index-radius:   0.75rem;             /* index icon */
+  --icon-index-radius:   0.5rem;             /* index icon */
 
   /* BORDER WIDTH */
   --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
 
   /* TEXT SIZE */
-  --txt-size-main:       110%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-  --txt-size-work:       115%;                /* work text size */
-  --greeting-icon-size:  1.3em;             /* header greeting icon size */
+  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+  --txt-size-work:       110%;                /* work text size */
 
   /* TEXT BOLDNESS */
   --txt-semibold:        600;                 /* font-weight hover effect */
@@ -113,7 +102,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
 
 /*>========== LAYOUT TOGGLES ==========<*/
 
-  --greeting-icon-display: none;   /* set to "flex" to show the user avatar in the header */
+  --greeting-icon-display: none;  /* set to "inline" to show the user avatar in the header */
   --splash-social-display: none;   /* set to "inline" to show the social share buttons on the splash page */
   --footer-display: inline;        /* set to "none" to hide the footer */
 
@@ -147,7 +136,7 @@ span.claimed,
 h5.fandoms.heading a.tag,
 dd.fandom.tags a,
 select {
-    font-family: Apfel Grotezk, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
 }
 
 /* HEADINGS FONT FAMILY */
@@ -158,7 +147,7 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: Apfel Grotezk Fett, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
     font-weight: var(--txt-bold);
 }
 
@@ -179,10 +168,31 @@ textarea#skin_css,
     /* for cursive version of Victor Mono */
 }
 
-/* WORKS FONT */
-#workskin,
-.preface * {
-  font-family: Domine, Merriweather, serif;
+/*>========== TEXT DECORATIONS ==========<*/
+/* don't forget to change the decoration in the mobile skin as well */
+
+/* TITLE DECORATIONS */
+#header .heading a::before {
+    content: "Archive of Our Own\00a0❦";
+}
+
+/* HEADING DECORATIONS */
+#dashboard .current:after,
+.home .header h2::after,
+.splash>.module h3::after {
+    content: "\00a0❦";
+}
+
+/* TAG DECORATIONS */
+a.tag:not(.fandom.index.group a.tag,
+    h2.heading a.tag,
+    .splash .favorite a.tag,
+    h5.fandoms.heading a.tag,
+    dd.fandom.tags a,
+    [class^=warning] a.tag,
+    [class^=relationship] a,
+    [class^=character] a.tag):after {
+    content: "\00a0\00a0❦";
 }
 
 /*============================================================
@@ -344,17 +354,22 @@ col.name {
 #tos_prompt .heading {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
     column-gap: 1.25em;
-    padding-block: 0.5em;
-    position: unset;
+    position: relative;
     z-index: 100;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    border-bottom: var(--border-width) solid var(--border1);
+    width: 96%;
+    max-width: 96%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border1);
+    border-radius: var(--radius-mid);
     box-shadow: var(--shadow-header);
     background: var(--bg2);
 }
@@ -403,18 +418,9 @@ col.name {
     color: transparent;
 }
 
-/* hide default "Archive of Our Own beta" text and recolor logo */
-#header .logo {
-  filter: var(--header-icon-hgl);
-}
-
-#header .logo:is(:hover, :focus) {
-  filter: var(--header-icon);
-}
-
-#header h1.heading a span,
-#header h1.heading a sup {
-  display: none;
+/* hide default "Archive of Our Own beta" text and logo */
+#header .heading a * {
+    display: none;
 }
 
 /*>========== HEADER DROPDOWN MENUS ==========<*/
@@ -479,7 +485,6 @@ col.name {
     background-color: transparent;
     color: var(--txt-main);
     transition: 25ms ease-out;
-
 }
 
 #header .navigation .dropdown .menu li a:is(:hover, :focus) {
@@ -541,16 +546,14 @@ col.name {
     order: -1;
     margin: 0;
     padding: 0;
-    align-items: center;
 }
 
 #greeting img.icon {
     display: block;
-    height: var(--greeting-icon-size);
-    width: var(--greeting-icon-size);
-    min-height: var(--greeting-icon-size);
-    min-width: var(--greeting-icon-size);
-    border: none;
+    height: 1.143em;
+    width: 1.143em;
+    min-height: 1.143em;
+    min-width: 1.143em;
     border-radius: 0.25em;
 }
 
@@ -563,28 +566,27 @@ col.name {
 
 /* user profile icon */
 #header #greeting .dropdown>a[href*="/users/"] {
-    content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-user.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-1.png");
 }
 
 /* post new work icon */
 #header #greeting .dropdown>a[href*="/works/new"] {
-    content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-new-work.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-2.png");
 }
 
 /* log out icon */
 #header #greeting a[href*="/users/logout"] {
-    content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-logout.png");
+    content: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-star-3.png");
 }
 
-/* override box-sizing/min-height from the dropdown-toggle rule so height: 1em scales correctly */
 #header #greeting .dropdown>a[href*="/users/"],
 #header #greeting .dropdown>a[href*="/works/new"],
 #header #greeting a[href*="/users/logout"] {
     display: inline-block;
     box-sizing: content-box;
-    height: var(--greeting-icon-size);
-    min-height: var(--greeting-icon-size);
-    min-width: var(--greeting-icon-size);
+    height: 1.143em;
+    min-height: 1.143em;
+    min-width: 1.143em;
 }
 
 #header #greeting>ul>li>a {
@@ -605,6 +607,7 @@ col.name {
 #header>nav .user {
     column-gap: 0.5em;
 }
+
 
 /*>========== PRIMARY NAVIGATION ==========<*/
 /* contains Fandoms, Browse, Search, About and search bar */
@@ -687,20 +690,17 @@ col.name {
 
 /*>========== COLLECTIONS CONTEXT ==========<*/
 
-#header:has(h2) {
-    padding-bottom: 0;
-}
-
 #header h2 {
     order: 4;
     display: block;
     width: 100%;
     min-height: unset;
     max-height: 30vh;
-    margin-top: 0.25em;
-    padding: 0.5em var(--margins-header);
+    padding: 0.25em var(--margins-header);
     border-inline: none;
     border-top: var(--border-width) solid var(--border2);
+    border-bottom-left-radius: var(--radius-big);
+    border-bottom-right-radius: var(--radius-big);
     background-color: var(--link-hgl) !important;
     background-size: auto 100% !important;
     font-size: 1.15em;
@@ -711,39 +711,47 @@ col.name {
 /*============================================================
 >> 04 REGION: DASHBOARD
 ============================================================*/
-
 /* sticky sidebar navigation */
 #dashboard,
 #dashboard.own {
     position: sticky;
-    top: 0;
+    top: 1em;
     box-sizing: border-box;
     width: 18%;
     min-width: 150px;
     /* prevent sidebar from getting too narrow */
     max-width: 230px;
     /* prevent sidebar from getting too wide */
-    max-height: 100vh;
+    max-height: 96vh;
     overflow-x: visible;
     overflow-y: auto;
-    padding: 0.429rem 0.5rem 0 0.5rem;
-    border: none;
-    border-right: var(--border-width) solid;
+    margin-top: 1.85em;
+    margin-left: 2%;
+    padding-top: 0.429rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-width: var(--border-width);
+    border-style: solid;
     border-color: var(--border1) !important;
     /* required for tablet + mobile skin */
-    border-radius: 0;
-    background-color: var(--bg3);
+    border-radius: var(--radius-mid);
+    background-color: var(--bg5);
     font-size: 0.875em;
     scrollbar-color: transparent transparent;
+    box-shadow: var(--shadow-header);
 }
 
 #dashboard ul {
     display: block;
     float: none;
     position: relative;
-    padding: 0.429em 0;
-    border-top: var(--border-width) solid var(--border1);
-    text-align: left;
+    padding-top: 0.429em;
+    padding-bottom: 0.429em;
+    border-top-width: var(--border-width);
+    border-top-style: solid;
+    border-top-color: var(--border1);
+    text-align: center;
 }
 
 #dashboard ul:not(.secondary):first-of-type {
@@ -756,7 +764,10 @@ col.name {
     box-sizing: border-box;
     max-width: 100%;
     margin-block: 1px;
-    padding: 0.429em 0.5rem;
+    padding-top: 0.429em;
+    padding-right: 0.5rem;
+    padding-bottom: 0.429em;
+    padding-left: 0.5rem;
     border-radius: var(--radius-small);
     color: var(--txt-main);
     line-height: 1.286;
@@ -768,10 +779,10 @@ col.name {
 }
 
 #dashboard .current {
-    background-color: var(--int-current-bg);
+    background-color: transparent;
     color: var(--int-current-txt);
-    border: 1px solid var(--int-current-border);
-    box-shadow: var(--shadow-box2);
+    border: none;
+    box-shadow: none;
     font-weight: var(--txt-semibold);
 }
 
@@ -783,9 +794,43 @@ col.name {
 #dashboard .secondary {
     margin-block: 0.25em;
     padding: 0.25em;
-    border: var(--border-width) solid var(--border3);
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border3);
     box-shadow: var(--shadow);
     background-color: var(--bg6);
+}
+
+/* corner decoration images on own dashboard */
+#dashboard,
+#dashboard.own {
+    overflow: hidden;
+    z-index: 0;
+}
+
+#dashboard::before,
+#dashboard.own::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.75;
+    background-image:
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-2.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-3.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-4.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-5.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position:
+        left 0.5rem top 0.5rem,
+        right 0.5rem top 0.5rem,
+        left 0.5rem bottom 0.5rem,
+        right 0.5rem bottom 0.5rem;
+    background-size: 60px auto, 60px auto, 60px auto, 60px auto;
+    filter: var(--header-icon);
 }
 
 /*============================================================
@@ -836,6 +881,12 @@ col.name {
     content: "!";
 }
 
+/*
+ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
+    display: flex;
+    margin-right: 24em;
+}
+
 /*============================================================
 >> 06 REGION: FOOTER
 ============================================================*/
@@ -846,6 +897,7 @@ col.name {
     width: 100%;
     max-width: 100%;
     padding: 3% 5%;
+    margin-top: 2%;
     border-top: var(--border-width) solid var(--border2);
     background: linear-gradient(to top, var(--bg1) 70%, var(--bg2) 100%);
     overflow: hidden;
@@ -1490,7 +1542,6 @@ input::file-selector-button {
     /* prevent text overflow */
     color: var(--int-btn-txt);
     transition: 25ms ease-out;
-    ;
 }
 
 .resp-sharing-button {
@@ -2212,13 +2263,13 @@ dl.meta {
 
 .meta dt {
     box-sizing: border-box;
-    width: 26.5%;
+    width: 27.5%;
     min-width: unset;
 }
 
 .meta dd {
     box-sizing: border-box;
-    width: 73.5%;
+    width: 72.5%;
 }
 
 /* adjust meta tag positioning */
@@ -2238,18 +2289,28 @@ dl.meta dd ul {
     border-radius: 0px;
 }
 
+.news .meta dt,
+.news .meta dd,
+.news .meta ul {
+    display: inline;
+}
+
 /*============================================================
 >> 13 GROUP: BLURB
 ============================================================*/
 
 li.blurb,
 .blurb .blurb,
-.region.own+.dashboard li.blurb.own {
-    padding: var(--blurb-padding) var(--blurb-padding) 0.643em;
+.region.own+.dashboard li.blurb.own,
+.listbox li.blurb {
+    position: relative;
+    z-index: 0;
+    padding: var(--blurb-padding) !important;
     background-color: var(--bg5) !important;
     box-shadow: none;
     overflow-wrap: anywhere;
     word-break: normal;
+    overflow: hidden;
 }
 
 li.blurb,
@@ -2260,6 +2321,46 @@ li.picture.blurb,
     border: var(--border-width) solid var(--border3);
     border-radius: var(--radius-big);
     box-shadow: var(--shadow-box1);
+}
+
+/* decorative corner images on blurbs (from midnight_bloom) */
+li.blurb::before,
+.work.blurb::before,
+.bookmark.blurb::before,
+dl.meta::before,
+#main dl.work.meta.group::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    opacity: 0.75 !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-8.png"),
+        url("https://wolfbatcat.github.io/ao3-themes/assets/decals/tb-9.png") !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-position: left top, right bottom !important;
+    background-size: 85px auto, 85px auto !important;
+    filter: var(--header-icon) !important;
+}
+
+/* ensure blurb children sit above the ::before layer */
+li.blurb > *,
+.work.blurb > *,
+.bookmark.blurb > *,
+dl.meta > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ensure blurb children sit above the ::before layer */
+li.blurb > *,
+.work.blurb > *,
+.bookmark.blurb > *,
+dl.meta > * {
+    position: relative;
+    z-index: 1;
 }
 
 .blurb .header h4.heading a:first-child {
@@ -2281,6 +2382,72 @@ li.picture.blurb,
     /* required for own mystery blurbs */
 }
 
+/*>========== BLURB HEADER LAYOUT ==========<*/
+
+.blurb .header:has(ul.required-tags) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.blurb .header .heading {
+    margin: 0;
+}
+
+/* work title and author */
+.blurb .header h4.heading {
+    order: 1;
+    flex: 1;
+    box-sizing: border-box;
+    padding-right: 11ch;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+/* reposition fandom tags below title */
+.blurb h5.fandoms.heading {
+    order: 4;
+    margin-top: 0.5em;
+}
+
+/* hide empty space on prompts without fandoms */
+.blurb h5.fandoms.heading:not(:has(a.tag)) {
+    height: 0;
+}
+
+/* reposition content rating icons */
+.blurb .header ul.required-tags {
+    order: 3;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    position: unset;
+    width: 100%;
+    margin-top: 0.429em;
+    padding-top: 0.643em;
+    border-top: var(--border-width) solid var(--border2);
+}
+
+/* reset positioning for content icons */
+.blurb ul.required-tags,
+.blurb ul.required-tags li,
+.blurb ul.required-tags li+li+li,
+.blurb ul.required-tags li+li+li+li,
+.blurb ul.required-tags li a {
+    position: unset;
+    width: unset;
+    height: unset;
+    margin: 0;
+    padding: 0;
+}
+
+.blurb .header p.notice {
+    order: 6;
+    width: 100%;
+    margin: 0.5em 0 0 0;
+}
+
 /*>========== MODIFICATION: PICTURE ==========<*/
 /* indices with icon pictures: collections, users, skins, mystery blurbs */
 
@@ -2288,7 +2455,7 @@ li.picture.blurb,
 .mystery.blurb:has(.icon)>.header {
     min-height: 45px;
     margin: 0;
-    padding-bottom: var(--blurb-padding);
+    padding-bottom: 0.75em;
     border-bottom: var(--border-width) solid var(--border2);
 }
 
@@ -2310,7 +2477,7 @@ li.picture.blurb,
 .blurb:has(.icon)>.header h4,
 .blurb:has(.icon)>.header h5,
 .blurb>.header>.mods.commas {
-    margin-left: 45px;
+    margin-left: 3em;
     padding-left: var(--blurb-padding);
 }
 
@@ -2328,7 +2495,7 @@ li.picture.blurb,
 }
 
 .bookmark .blurb h4.heading {
-    padding-right: 6ch;
+    padding-right: 14ch;
 }
 
 .bookmark p.status {
@@ -2405,7 +2572,7 @@ li.picture.blurb,
 
 .bookmark div.user .datetime {
     top: 0.7em;
-    right: var(--blurb-padding);
+    left: var(--blurb-padding);
 }
 
 /* bookmark overview pages - who bookmarked a work */
@@ -2531,7 +2698,7 @@ li.comment:not(:has(.edit_comment)) {
 .comment img.icon,
 .comment span.icon,
 .comment div.icon>a {
-    border-radius: var(--icon-primary-radius);
+    border-radius: 50%;
     transition: border-radius 150ms linear;
 }
 
@@ -2613,6 +2780,13 @@ li.comment:has(.edit_comment) {
     border: none;
 }
 
+/* limit image height in comments */
+.comment img {
+    width: 100%;
+    max-width: 750px;
+    max-height: 500px;
+}
+
 .thread .thread {
     margin-left: 3%;
 }
@@ -2648,7 +2822,6 @@ li.comment:has(.edit_comment) {
 .logged-in .splash>.module {
     box-sizing: border-box;
     margin-inline: 0;
-    padding: 0;
 }
 
 .logged-in .splash>.module {
@@ -2680,7 +2853,6 @@ li.comment:has(.edit_comment) {
 }
 
 /*>>========== MODULE: FIND YOUR FAVORITES ==========<<*/
-
 .splash .browse li a::before {
     color: var(--txt-main);
 }
@@ -2821,6 +2993,12 @@ li.comment:has(.edit_comment) {
 /* remove spacing when filters aren't actually present */
 .filtered .index:not(:has(+ form.filters)) {
     width: 100%;
+}
+
+/* hide filters on work/bookmark pages if there are no works/bookmarks */
+.dashboard.filtered.region:not(:has(ol.index > li.blurb)) form.filters:not(:has(dt.tags + dd input)),
+.dashboard.filtered.region:not(:has(ol.index > li.blurb, form.filters dt.tags + dd input)) li:has(#go_to_filters) {
+    display: none;
 }
 
 /*>========== INTERACTION: SEARCH ==========<*/
@@ -3130,10 +3308,12 @@ dl.nomination {
 /*>========== WORK MARGINS AND TEXT ==========<*/
 
 #workskin {
-    max-width: var(--workskin-width);
+    max-width: 70em;
+    /* slightly narrower than default */
     margin: 0 auto;
     padding: 0 2%;
     font-size: var(--txt-size-work);
+    /* adjust work font size here */
 }
 
 /*>========== IMAGES ==========<*/
@@ -3232,8 +3412,13 @@ div.error,
     color: inherit !important;
 }
 
-p.muted.notice {
-    display: none;
+.alert a:not(.action):is(:hover, :focus),
+.notice a:not(.action):is(:hover, :focus),
+.error a:not(.action):is(:hover, :focus),
+.announcement .userstuff a:is(:hover, :focus),
+.announcement input[type="submit"]:is(:hover, :focus),
+.announcement .action:is(:hover, :focus) {
+    filter: opacity(60%);
 }
 
 /*>========== ADMIN ANNOUNCEMENT BANNERS ==========<*/
@@ -3242,14 +3427,19 @@ p.muted.notice {
     display: flex;
     align-items: end;
     justify-content: center;
+    box-sizing: border-box;
+    z-index: 1;
+    width: 96%;
+    max-width: 96%;
     margin-top: 1%;
     margin-right: 2%;
+    margin-bottom: 0;
     margin-left: 2%;
-    z-index: 1;
     padding: 0.429em;
-    border-bottom: var(--border-width) solid var(--alert-txt);
+    border: var(--border-width) solid var(--alert-txt);
+    border-left: 5px solid var(--alert-txt);
+    border-radius: var(--radius-big);
     background: var(--alert-bg);
-    filter: opacity(90%);
 }
 
 .announcement .userstuff {
@@ -3264,14 +3454,13 @@ p.muted.notice {
 
 .announcement .userstuff p {
     margin: 0;
-    font-size: 0.95em;
+}
 
-    &.submit {
-        position: unset;
-        z-index: 3;
-        width: 2em;
-        text-align: center;
-    }
+.announcement p.submit {
+    position: unset;
+    z-index: 3;
+    width: 2em;
+    text-align: center;
 }
 
 .announcement input[type="submit"],
@@ -3486,6 +3675,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 }
 
 .tagset .primary .icon,
+.tagset .primary .icon,
 .tag .primary .icon,
 .index .tagset .icon {
     box-sizing: border-box;
@@ -3649,7 +3839,7 @@ img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
 img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-yes-01.png");
     background-color: var(--icon-warning-yes);
-    background-position: center -1px;
+    background-position: center -2px;
 }
 
 .required-tags .external-work,
@@ -4116,7 +4306,7 @@ dl.stats dd {
 }
 
 /* remove white chart background */
-svg > rect {
+svg>rect {
     display: none;
 }
 
@@ -4177,6 +4367,7 @@ div.fmtPreview.userstuff p code {
 /*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
 
+/* inline header wrapper styling */
 li.blurb #header.region {
     display: inline-flex !important;
     align-items: baseline !important;
@@ -4189,32 +4380,13 @@ li.blurb #header.region {
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
-    color: inherit !important;
 }
 
 li.blurb #header.region>ul.navigation.actions>li.dropdown {
     color: var(--txt-main) !important;
 }
 
-li.blurb #header.region>ul.navigation.actions>li.dropdown::before {
-    content: none !important;
-}
-
-li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
-    z-index: 9999 !important;
-    box-sizing: border-box !important;
-    width: max-content !important;
-    min-width: 15em !important;
-    padding: 0.25em 0 !important;
-    border: 1px solid var(--border3) !important;
-    border-radius: var(--radius-mid) !important;
-    box-shadow: var(--shadow) !important;
-    background: var(--bg6) !important;
-    font-size: 0.95em !important;
-    left: auto !important;
-    right: 0 !important;
-}
-
+/* user notes styling */
 .create-note-btn {
     border-radius: 8px !important;
 }
@@ -4229,6 +4401,7 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     box-shadow: var(--shadow-box2) !important;
 }
 
+/* remove border when note exists */
 .user-note-preview>div>div:has(details) {
     border: none !important;
     border-radius: 0 !important;
@@ -4271,42 +4444,6 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     opacity: 100% !important;
 }
 
-/*>========== USERSCRIPT - BADGE FOR UNREAD INBOX MESSAGES ==========<*/
-/* https://greasyfork.org/en/scripts/474892 */
-
-#greeting a#inboxbadge {
-    display: flex !important;
-    align-items: center;
-    box-sizing: border-box !important;
-    column-gap: 0 !important;
-    padding: 0 0.25em !important;
-    margin: 0 !important;
-    height: var(--greeting-icon-size) !important;
-    color: var(--bg2) !important;
-}
-
-#greeting #inboxbadge {
-    background: var(--txt-main) !important;
-    border: 2px solid var(--txt-main) !important;
-    border-radius: 0.25em !important;
-}
-
-#greeting a#inboxbadge .iconify {
-    width: 1em;
-    height: 1em;
-    display: flex;
-    flex-shrink: 0;
-}
-
-#greeting p.icon:has(#inboxbadge) {
-    display: flex !important;
-}
-
-#greeting p.icon:has(#inboxbadge) img.icon {
-    display: var(--greeting-icon-display);
-    margin-left: 0.5em;
-}
-
 /*>========== MISC USERSCRIPT STYLING ==========<*/
 /* https://greasyfork.org/en/users/1498004 */
 
@@ -4318,7 +4455,6 @@ input[type="range"] {
 input[type="range"]::-moz-range-progress {
     background: var(--link-hgl);
     height: 0.25em;
-    border-radius: 0.75em;
 }
 
 input[type="range"]::-moz-range-track {
@@ -4338,4 +4474,4 @@ input[type="range"]::-moz-range-thumb {
 input[type="checkbox"]:checked+[class*="toggle-slider"],
 input[type="checkbox"]:checked+[class*="toggle-track"] {
     background-color: var(--link-visited) !important;
-}    
+}

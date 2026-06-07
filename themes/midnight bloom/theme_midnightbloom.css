@@ -9,26 +9,6 @@ GLOBAL VARIABLES
 
 :root {
 
-/*>========== UI PARAMETERS ==========<*/
-
-  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
-  --margins-header:      1rem;                /* header on desktop */
-  --margins-main:        2.5%;                  /* site contents on desktop */
-  --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
-
-  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
-  --radius-small:        0.5rem;             /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          0.5rem;             /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          0.5rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
-  --radius-alt:          0.5rem;             /* header search box, buttons */
-  --radius-tag:          8px;         /* tags */
-
-  /* ICON BORDER-RADIUS */
-  --icon-content-radius: 0.25rem;             /* content and bookmark icon */
-  --icon-primary-radius: 50%;                 /* primary and comment icon */
-  --icon-index-radius:   0.75rem;             /* index icon */
-
-
 /*>========== MAIN BACKGROUND COLORS ==========<*/
 
   --bg1:                 #2A3B34;             /* main background, footer etc. */
@@ -49,9 +29,6 @@ GLOBAL VARIABLES
   --border4:             #3D5548;             /* meta boxes, tooltips, scrollbar thumb etc. */
   --border5:            #22322C ;             /* system messages border */
 
-  /* WIDTH */
-  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
-
 
 /*>========== SHADOWS ==========<*/
 /* replace values with "none" (without quotation marks) to remove shadows */
@@ -65,10 +42,6 @@ GLOBAL VARIABLES
 
 /*>========== MAIN TEXT ==========<*/
 
-  /* TEXT SIZE */
-  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-  --txt-size-work:       110%;                /* work text size */
-
   /* TEXT COLORS */
   --txt-header:          #E7E3D8;             /* header text */
   --txt-header-hgl:      var(--link-hgl);     /* selected header dropdown toggle and link items */
@@ -77,15 +50,10 @@ GLOBAL VARIABLES
   --txt-alt1:            #FFFFFF;             /* announcements */
   --txt-alt2:            #FFFFFF;             /* checkbox checkmark, help symbol, event announcements etc. */
 
-  /* TEXT BOLDNESS */
-  --txt-semibold:        600;                 /* font-weight hover effect */
-  --txt-bold:            700;                 /* font-weight for headings */
-
   /* LINKS */
   --link:                #8FC6B5;             /* link color */
   --link-hgl:            #8FC6B5;             /* color for hovered/focused links, header search bar icon, question icon  */
   --link-visited:        #7DBAA0;             /* color for already visited links */
-  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
 
 
 /*>========== INTERACTION COLORS ==========<*/
@@ -159,6 +127,7 @@ GLOBAL VARIABLES
   --tag-fandom-bg:       #3E6E5C;
   --tag-warning-bg:      #527060;
   --tag-ship-bg:         #3E8070;
+  --tag-platonic-ship-bg: #3E8070;
   --tag-character-bg:    #326858;
   --tag-freeform-bg:     var(--tag-default-bg);
   --tag-splash-bg:       var(--bg5);    /* leave alone - only for tags on the splash page */
@@ -168,6 +137,7 @@ GLOBAL VARIABLES
   --tag-fandom-txt:      #FFFFFF;
   --tag-warning-txt:     #FFFFFF;
   --tag-ship-txt:        #FFFFFF;
+  --tag-platonic-ship-txt: #FFFFFF;
   --tag-character-txt:   #FFFFFF;
   --tag-freeform-txt:    #FFFFFF;
 
